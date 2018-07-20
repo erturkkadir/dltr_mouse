@@ -1,0 +1,35 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>capture microphone audio into buffer</title>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.10.0"> </script>
+
+</head>
+<body>
+
+    <p>Volume</p>
+    <input id="volume" type="range" min="0" max="1" step="0.1" value="0.5"/>
+	<canvas id="glCanvas" width="64" height="48"></canvas>
+
+</body>
+
+<script>
+
+main();
+
+function main() {
+	const canvas = document.querySelector("#glCanvas");
+	const gl = canvas.getContext("webgl");
+	if(!gl) {
+	   alert("nooo");
+	   return; 
+	}
+	gl.clearColor(0.0, 0.0, 0.0, 1.0);
+	gl.clear(gl.COLOR_BUFFER_BIT);
+
+}
+
+
+</script>
+</html>
