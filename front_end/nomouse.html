@@ -1,35 +1,53 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>capture microphone audio into buffer</title>
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Live input record and playback</title>
+  <style type='text/css'>
+    ul { list-style: none; }
+    #recordingslist audio { display: block; margin-bottom: 10px; }
+  </style>
+
+  <!-- FEATURE EXTRACTIONS -->
+  <!-- https://github.com/meyda/meyda/wiki/Getting-Started -->
+
+  <!-- TENSORFLOW JS -->
+  <!-- https://js.tensorflow.org/#getting-started -->
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.10.0"> </script>
 
 </head>
 <body>
 
-    <p>Volume</p>
-    <input id="volume" type="range" min="0" max="1" step="0.1" value="0.5"/>
-	<canvas id="glCanvas" width="64" height="48"></canvas>
 
+  <h1>DL TR Ses den komuta projesi</h1>
+
+  <p>Google Chrome un son surumunu kullandiginiz emin olunuz.</p>
+
+  <p>Asagidaki konutlari kullanarak mouse hareket ettirebilirsiniz</p>
+	<p>Asagi</b><br>
+	<p>Yukari</b><br>
+	<p>Sol</b><br>
+	<p>Sag</b><br>
+	<p>Tikla</b><br>
+
+	 <p>Asagidaki konutlari kullanarak mouse hareket ettirebilirsiniz</p>
+
+
+
+<br><br>
+  <button onclick="forward_to();">Katki Sagla</button>
+  <p id='formats'>formats</p>
+  <p id='log'>log</p>
+
+
+
+<p> recorder referans : https://github.com/mattdiamond/Recorderjs </>
+	<script src="js/meyda/meyda.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.12.0"> </script>
+	<script src="js/main.js"> </script>
+	<script src="recorder.js"></script>
 </body>
-
-<script>
-
-main();
-
-function main() {
-	const canvas = document.querySelector("#glCanvas");
-	const gl = canvas.getContext("webgl");
-	if(!gl) {
-	   alert("nooo");
-	   return; 
-	}
-	gl.clearColor(0.0, 0.0, 0.0, 1.0);
-	gl.clear(gl.COLOR_BUFFER_BIT);
-
-}
-
-
-</script>
 </html>
