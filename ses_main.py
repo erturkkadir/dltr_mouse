@@ -2,13 +2,15 @@ import keras
 from ses_funcs import *
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten, Conv2D, MaxPool2D
+import tensorflowjs as tfjs
+
 
 feature_dim_1 = 13  # in order to match Meyda
 feature_dim_2 = 60
 
 channel = 1
-epochs = 75
-num_classes = 5     # asagi, yukari, sag, sol, tikla
+epochs = 150
+num_classes = 5     # asagi, sag, sol, tikla, yukari
 batch_size = 20
 
 x_train, x_test, y_train, y_test = get_train_test(feature_dim_1, feature_dim_2)
@@ -33,7 +35,7 @@ def get_model():
     MyModel.add(Dense(128, activation='relu'))
     MyModel.add(Dropout(0.25))
     MyModel.add(Dense(64, activation='relu'))
-    MyModel.add(Dropout(0.4))
+    MyModel.add(Dropout(0.40))
     MyModel.add(Dense(num_classes, activation='softmax'))
     MyModel.compile(loss=keras.losses.categorical_crossentropy,
                     optimizer=keras.optimizers.Adadelta(),
@@ -47,12 +49,13 @@ def predict(filepath, model):
     pred = model.predict(sample_reshape)
     print("Prediction : ", pred)
     label = get_labels()[0][np.argmax(pred)]
+    print(label)
     return label
 
 
 model = get_model()
 model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, verbose=1, validation_data=(x_test, y_test))
 model.save('model.tf')
-
+tfjs.converters.save_keras_model(model, "js_model")
 pred = predict('data/sol/2018-07-28T00_08_59.024Z.wav', model=model)
 print(pred)

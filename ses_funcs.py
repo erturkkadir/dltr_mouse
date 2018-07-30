@@ -17,12 +17,13 @@ def get_labels(path=DATA_PATH):
     return labels, label_indices, category
 
 
-def wav2mfcc(file_path, dim1=20, dim2=60):
+def wav2mfcc(file_path, dim1=13, dim2=60):
     # Bazi orneklerde ornek sayisi 1/3 oraninda dusurulurek islem yapiliyor wave[::3]
     # sr = 48.000/3 = 16.000, biz bu yolu tercih etmeyecegiz
+    print(file_path)
     wave, sr = librosa.load(file_path, sr=None, mono=True)
     # sr = 48.000, wave ~ 48000 (1 sec record)
-    mfcc = librosa.feature.mfcc(wave, sr=sr, n_mfcc=dim1)
+    mfcc = librosa.feature.mfcc(wave, sr=sr, n_mfcc=dim1, hop_length=512)
     # shape of mfcc is (20, 89) : 89 is depend on record size
     # plt.figure(1)
     # plt.grid(True)
@@ -72,4 +73,4 @@ def get_train_test(dim1, dim2):
     x = np.array(x)
     y = np.array(y)
 
-    return train_test_split(x, y, test_size=int(len(x)*0.1), shuffle=True)
+    return train_test_split(x, y, test_size=int(len(x)*0.15), shuffle=True)

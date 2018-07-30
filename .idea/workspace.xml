@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4946c5e-dc82-46b2-ad7f-46882ebea142" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/data/asagi/2018-07-30T11_03_05.205Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/asagi/2018-07-30T17_58_24.165Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sag/2018-07-30T16_31_27.444Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sag/2018-07-30T17_58_53.336Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sol/2018-07-28T20_58_28.100Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sol/2018-07-30T16_31_49.150Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/sol/2018-07-30T17_59_04.156Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/tikla/2018-07-28T20_58_41.015Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/tikla/2018-07-30T16_32_03.033Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/tikla/2018-07-30T17_59_14.854Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/yukari/2018-07-28T20_57_08.961Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/yukari/2018-07-30T16_31_03.011Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/yukari/2018-07-30T17_58_38.958Z.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front_end/model.tf" beforeDir="false" afterPath="$PROJECT_DIR$/front_end/model.tf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ses_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/ses_funcs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ses_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ses_main.py" afterDir="false" />
     </list>
@@ -16,8 +30,10 @@
     <session id="600059750">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -25,7 +41,7 @@
           <entry key="html" value="2" />
           <entry key="md" value="1" />
           <entry key="php" value="1" />
-          <entry key="py" value="4" />
+          <entry key="py" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -33,28 +49,28 @@
           <entry key="HTML" value="2" />
           <entry key="Markdown" value="1" />
           <entry key="PHP" value="1" />
-          <entry key="Python" value="4" />
+          <entry key="Python" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1501" />
+          <entry key="py" value="1700" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="1501" />
+          <entry key="Python" value="1700" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ses_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+            <state relative-caret-position="81">
+              <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -62,14 +78,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ses_funcs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+            <state relative-caret-position="248">
+              <caret line="75" column="59" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/audioread/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1955">
+              <caret line="115" selection-start-line="115" selection-end-line="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/librosa/feature/spectral.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23681">
+              <caret line="1406" column="71" selection-start-line="1406" selection-start-column="68" selection-end-line="1406" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -84,6 +118,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>offset</find>
+      <find>hop_length</find>
+      <find>spectral_centroid</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -93,8 +134,8 @@
         <option value="$PROJECT_DIR$/front_end/nomouse.html" />
         <option value="$PROJECT_DIR$/front_end/recorder,html.html" />
         <option value="$PROJECT_DIR$/front_end/save.php" />
-        <option value="$PROJECT_DIR$/ses_funcs.py" />
         <option value="$PROJECT_DIR$/ses_main.py" />
+        <option value="$PROJECT_DIR$/ses_funcs.py" />
       </list>
     </option>
   </component>
@@ -112,7 +153,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -125,40 +165,11 @@
               <item name="dltr_mouse" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="dltr_mouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dltr_mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="asagi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dltr_mouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dltr_mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="sag" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dltr_mouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dltr_mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="sol" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dltr_mouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dltr_mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="tikla" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dltr_mouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dltr_mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="yukari" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -167,12 +178,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\front_end\js" />
-      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\front_end" />
-      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\front_end\js\meyda" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\yukari" />
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\tikla" />
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\sol" />
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\sag" />
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\asagi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\yukari" />
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\tikla" />
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\sol" />
@@ -253,12 +266,12 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3548387" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.538376" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.49499443" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -390,10 +403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
           <caret line="149" selection-start-line="149" selection-end-line="149" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -419,13 +428,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/librosa/feature/spectral.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-107">
-          <caret line="1374" lean-forward="true" selection-start-line="1374" selection-end-line="1374" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/keras/engine/training_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -440,22 +442,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ses_funcs.py">
+    <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/audioread/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="65" column="49" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1955">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/librosa/feature/spectral.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23681">
+          <caret line="1406" column="71" selection-start-line="1406" selection-start-column="68" selection-end-line="1406" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ses_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+        <state relative-caret-position="81">
+          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ses_funcs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="75" column="59" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
