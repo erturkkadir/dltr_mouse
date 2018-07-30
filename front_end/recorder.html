@@ -22,9 +22,9 @@
   <h1>DL TR Ses den komuta projesi Veritabani Olusturma Sayfasina Hosgeldiniz</h1>
 
   <p>Google Chrome un son surumunu kullandiginiz emin olunuz.</p>
-
+  
   <p>Hazir Oldugunuzda hangi kelimeyi soyleyeceginiz secip basla tusuna basin</p>
-	<p> Unutmayin Kayit 1 sn sonra kendiliginden duracaktir</p>
+	<p> Unutmayin Kayit 1 sn sonra kendiliginden duracaktir</p>    
 	<select id="komut">
 	  <option value="asagi">Asagi</option>
 	  <option value="yukari">Yukari</option>
@@ -47,30 +47,30 @@
 	Proje tamamandiginda dileyen herkes bu ses dosyalarini kullanarak kendi uygulamasini olusturabilir.<br>
 	</b>
   </div>
-
-
+  
+  
   <pre id="log"></pre>
   <p> ses kaydi icin referans : https://github.com/mattdiamond/Recorderjs </>
    </div>
-   <div id="fade" style="visibility: hidden" ><img src="uploading.gif"></div>
-  <script>
-
+   <div id="fade" style="visibility: hidden" ><img src="uploading.gif"></div> 
+  <script> 
+  
   /* Force to https */
   if (location.protocol != 'https:') {
 	location.href = 'https://www.syshuman.com/ml/recorder.html';
   }
   /* *                **/
-
+  
   var gumStream;    // Stream for getUserMedia()
   var recorder;     // Recorder Object
   var input;
-
+  
   var btn_start =  document.getElementById("start");
   var btn_send =  document.getElementById("send");
-
+  
   btn_start.addEventListener("click", startRecording);
 
-  fade = document.getElementById("fade");
+  fade = document.getElementById("fade");  
   master = document.getElementById("master");
   function startRecording() {
 	var constrains = {audio:true, video: false }
@@ -78,7 +78,7 @@
 	btn_send.disabled = true;
 	navigator.mediaDevices.getUserMedia(constrains).then(function(stream) {
 		console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
-
+		
 		audioContext = new AudioContext();
 		document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+audioContext.sampleRate/1000+"kHz";
 		if (audioContext.sampleRate!=48000) {
@@ -86,22 +86,22 @@
 			return;
 		}
 		gumStream = stream;
-
+		
 		input = audioContext.createMediaStreamSource(stream);
-
+		
 		rec = new Recorder(input, {numChannels:1});			// Recording 2 channels  will double the file size
 		rec.record();
 		tmp = setTimeout(function() {
 			rec.stop();
 			gumStream.getAudioTracks()[0].stop();
 			rec.exportWAV(createDownloadLink);		//create the wav blob and pass it on to createDownloadLink
-			btn_send.disabled = false;
+			btn_send.disabled = false;			
 			clearTimeout(tmp);
 		}, 1000);
 		console.log("Recording started");
 		});
   }
-
+  
   function createDownloadLink(blob) {
     var url = URL.createObjectURL(blob);
 	var au = document.createElement('audio');
@@ -110,7 +110,7 @@
 	var filename = new Date().toISOString();
 	au.controls = true;
 	au.src = url;
-
+	
 	var komut = document.getElementById('komut').value;
 	var upload = document.getElementById('send');
 	upload.href="#";
@@ -124,26 +124,28 @@
 			 btn_start.disabled = false;
 			 fade.style.visibility = 'hidden';
 			 master.style.visibility = 'visible';
-			 if (e.target.response=="OK")
-				alert("Katkilariniz icin tesekkur ederiz. ")
-			 else
-                alert("Uzgunum sistemde sorun olustu."+e.target.response)
+			 if (e.target.response=="OK") {
+				alert("Katkilariniz icin tesekkur ederiz. ");
+				upload = null;
+			 } else {
+                alert("Uzgunum sistemde sorun olustu."+e.target.response);
+			 }
 			}
 		};
 		fade.style.visibility = 'visible';
 		master.style.visibility = 'hidden';
-
+			 
 		var fd=new FormData();
 		fd.append("audio_data",blob, filename);
 		xhr.open("POST","save.php?komut="+komut,true);
 		xhr.send(fd);
 	});
   }
-
-
-
+  
+  
+ 
   </script>
 
-
+ 
 </body>
 </html>

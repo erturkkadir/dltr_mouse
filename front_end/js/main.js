@@ -5,97 +5,104 @@
   function forward_to() {
 	location.href = 'https://www.syshuman.com/ml/recorder.html';
   }
-
  
-  
-  
-  
-  function tensor_flow() {
-	  
-		// Notice there is no 'import' statement. 'tf' is available on the index-page
-      // because of the script tag above.
-
-      // Define a model for linear regression.
-      const model = tf.sequential();
-      model.add(tf.layers.dense({units: 1, inputShape: [1]}));
-
-      // Prepare the model for training: Specify the loss and the optimizer.
-      model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
-
-      // Generate some synthetic data for training.
-      const xs = tf.tensor2d([1, 2, 3, 4], [4, 1]);
-      const ys = tf.tensor2d([1, 3, 5, 7], [4, 1]);
-
-      // Train the model using the data.
-      model.fit(xs, ys, {epochs: 10}).then(() => {
-        // Use the model to do inference on a data point the model hasn't seen before:
-        // Open the browser devtools to see the output
-        model.predict(tf.tensor2d([5], [1, 1])).print();
-      });
-  }	  
-	 
  
-  function startUserMedia(stream) {
-    var input = audio_context.createMediaStreamSource(stream);
-    recorder = new Recorder(input, {numChannels:1});	
-	
-  }
-
+  async function load_model() {
+	  return await tf.loadModel("js_model/model.json");
+  } 
   
-  function find_action(my_rec) {
-	document.getElementById("log").innerHTML = "Size : " + my_rec[0].length;	
-	c = 2;	
-  }
-  
-  
-  var meyda;
-  var gumStream;    // Stream for getUserMedia()
-  var recorder;     // Recorder Object
-  var input;
-  
-  window.onload = function init() {
-	window.AudioContext = window.AudioContext || window.webkitAudioContext;
-	navigator.getUserMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
+   var treshold = 0.002;
+   var maxDataLength = 60;
+   var audioContext;
+   var img = document.getElementById("img");
+   var log = document.getElementById("log");
+   var txt_rms = document.getElementById("txt_rms");
+   
+   //const model = load_model();
+ 
+   window.onload = function() {
+	   init();
+	   load_model();
+   }
+   
+   async function load_model() {
+	    model = await tf.loadModel("js_model/model.json");
+		return model;
+   }
+		
 	  
-	var context = new AudioContext();
+  function init() {
+	if(!navigator.mediaDevices) return false;
+	var constrains = {audio:true, video: false };
 	
-	window.source = context.createBufferSource();
-	source.connect(context.destination);
+	navigator.mediaDevices.getUserMedia(constrains).then(function(stream) {
+		audioContext = new AudioContext();
+		if (audioContext.sampleRate!=48000) {
+			alert("works at only 48 kHz " + audioContext.sampleRate);
+			return;
+		}		
+		input = audioContext.createMediaStreamSource(stream);
+		rec = new Recorder(input, {numChannels:1});			// Recording 2 channels  will double the file size
+		
+		rec.record();
+		tmp = setInterval(function() {
+			// txt_rms.innerHTML = "Date : " + new Date();
+			rec.stop();
+			rec.getBuffer(data_ready);		//create the wav blob and pass it on to createDownloadLink				
+			rec.clear();
+			rec.record();	
+			// txt_rms.innerHTML = "Date : " + new Date();
+		}, 1000);
+	  });
+    }
 	
-	/*
-	if !(navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.getUserMedia) {
-		alert("No microfone");
-		return;
+	function data_ready(buffers) {	
+		results = []	
+		frst = buffers[0].slice(0, 2048);		
+		rms = Meyda.extract('rms', frst);	
+		txt_rms.innerHTML = "Signal rms : " + rms;
+		if (rms>0.00002) {		
+			log.innerHTML = "PROCESSING>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>";
+			step = (buffers[0].length / 512) - 8; 	/* 47104 / 512 - 8  = 84 */
+			if(step<60) return;						/* in order to match librosa settings 2048, 512 */
+			if(step>60) step = 60;
+			data = [];
+			for (let i = 0; i < step; i++) {
+				ix1 = i * 512;
+				ix2 = ix1 + 2048;
+				data = buffers[0].slice(ix1, ix2);				
+				mfcc = Meyda.extract('mfcc', data);			
+				results.push(mfcc)				
+			}			
+			predict(results);
+		}			
 	}
-	*/
-	  
-	/* mic is available */  
-	navigator.mediaDevices.getUserMedia({audio:true, video: false }).then(function(mediaStream) {
 		
-		window.source = context.createMediaStreamSource(mediaStream);
+	async function predict(results) {
+	    /* Now the result have size of 13x60 now we need to convert it to [1][13][60][1] tensor */
+		shape = [1, 13, 60, 1];
+		tmp = tf.transpose(tf.tensor2d(results, [60,13]));
+		data = tmp.as4D(1, 13, 60, 1);
 		
-		meydaA = Meyda.createMeydaAnalyzer({
-			"audioContext":context, // required
-			"source":source, // required
-			"bufferSize": 2048, // required
-			"hopSize": 512, // optional
-			"windowingFunction": "hamming", // optional
-			"featureExtractors": ["mfcc"], // optional - A string, or an array of strings containing the names of features you wish to extract.
-			"callback": cb_mfcc // optional callback in which to receive the features for each buffer
+		// const model = await tf.loadModel("js_model/model.json");
 			
-		})
+		const prediction = model.predict(data);
 		
+		amax = prediction.as1D().argMax();
+		log.innerHTML = "Predicted Hot Vector ['asagi', 'sag', 'sol', 'tikla', 'yukari'] : " + prediction;
+		classId = (await amax.data())[0];
 		
-		rec = new Recorder(window.source, {numChannels:1});			// Recording 2 channels  will double the file size
-		
-		document.getElementById("formats").innerHTML="Format: 1 channel pcm @ "+context.sampleRate+"   Hz";
-		meydaA.start("mfcc");
-	});
-  };
-  i=0;
-  function cb_mfcc(features) {
-	  
-	  console.log(features);
-	  i = i + 1;
-	  if(i>20) meydaA.stop();
-  }
+		switch(classId) {
+			case 0 : src = 'images/adown.png'; break;
+			case 1 : src = 'images/aright.png'; break;
+			case 2 : src = 'images/aleft.png'; break;
+			case 3 : src = 'images/aclick.png'; break;
+			case 4 : src = 'images/aup.png'; break;
+			default : src = "";
+		}
+		img.src = src;	
+		console.log(classId);
+		console.log(prediction);
+
+	}
+	

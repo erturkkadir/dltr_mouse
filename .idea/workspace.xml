@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4946c5e-dc82-46b2-ad7f-46882ebea142" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/data/asagi/2018-07-30T11_03_05.205Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/asagi/2018-07-30T17_58_24.165Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/sag/2018-07-30T16_31_27.444Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/sag/2018-07-30T17_58_53.336Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/sol/2018-07-28T20_58_28.100Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/sol/2018-07-30T16_31_49.150Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/sol/2018-07-30T17_59_04.156Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/tikla/2018-07-28T20_58_41.015Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/tikla/2018-07-30T16_32_03.033Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/tikla/2018-07-30T17_59_14.854Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/yukari/2018-07-28T20_57_08.961Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/yukari/2018-07-30T16_31_03.011Z.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/yukari/2018-07-30T17_58_38.958Z.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/images/aclick.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/images/adown.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/images/aleft.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/images/aright.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/images/aup.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/images/uploading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/nomouse.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/recorder.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ml/save.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front_end/model.tf" beforeDir="false" afterPath="$PROJECT_DIR$/front_end/model.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ses_funcs.py" beforeDir="false" afterPath="$PROJECT_DIR$/ses_funcs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ses_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ses_main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +31,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
+          <entry key="html" value="3" />
           <entry key="md" value="1" />
           <entry key="php" value="1" />
           <entry key="py" value="7" />
@@ -46,7 +39,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
+          <entry key="HTML" value="3" />
           <entry key="Markdown" value="1" />
           <entry key="PHP" value="1" />
           <entry key="Python" value="7" />
@@ -78,16 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ses_funcs.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
+            <state relative-caret-position="436">
               <caret line="75" column="59" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ml/nomouse.html">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -163,7 +161,13 @@
             <path>
               <item name="dltr_mouse" type="b2602c69:ProjectViewProjectNode" />
               <item name="dltr_mouse" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="ml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="dltr_mouse" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dltr_mouse" type="462c0819:PsiDirectoryNode" />
+              <item name="ml" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -179,18 +183,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\ml" />
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\yukari" />
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\tikla" />
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\sol" />
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\sag" />
-      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\asagi" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\ml\images" />
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\ml" />
+      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse" />
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\yukari" />
       <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\tikla" />
-      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\sol" />
-      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\sag" />
-      <recent name="C:\Users\kadir\Documents\Github\dltr_mouse\data\asagi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -264,19 +268,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32925472" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.538376" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.538376" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.49499443" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32925472" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32925472" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -468,13 +471,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ses_funcs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="436">
           <caret line="75" column="59" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ml/nomouse.html">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
